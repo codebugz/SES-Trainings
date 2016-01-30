@@ -1,0 +1,25 @@
+<section class="user" ng-controller="AdminUserCtrl" ng-init="allUsers()">    
+    <a ui-sref="register" class="btn btn-success" style="margin-bottom: 15px;">Create a new user</a>
+
+    <table class="table table-condensed table-hover">
+        <thead>
+            <tr>
+                <th>User Name</th>
+                <th>Role</th>
+                <th>Created</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody> 
+            <tr ng-repeat="user in users">
+                <td>{{user.username}}</td>
+                <td>{{user.is_admin == true ? "Admin" : "Member"}}</td>
+                <td>{{user.created | date:'medium'}}</td>
+                <td>                    
+                    <button class="btn btn-danger btn-xs" ng-click="deleteUser(user._id)" confirm-click="Are you sure you wish to delete?"><span class="glyphicon glyphicon-trash"></span></button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</section>

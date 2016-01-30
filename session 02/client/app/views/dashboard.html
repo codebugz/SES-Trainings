@@ -1,0 +1,37 @@
+<div class="dashboard-page">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-3 col-md-2 sidebar">
+
+       <div class="text-center">
+        <h2 class="brand">Angular SES <small>Demo</small></h2>
+        <img src="images/flat-avatar.png" class="user-avatar" /><br />
+        
+		<form class="form-horizontal" role="form" ng-controller="AdminUserCtrl" ng-init="isAuthenticated()">					
+            	 <!-- <a ui-sref="login" class="btn btn-white btn-outline btn-rounded btn-sm">Logout</a> -->
+				<!-- <button type="submit" class="btn btn-white btn-outline btn-sm btn-rounded" ng-click="logOut()">log out</button>		 -->
+			<div ng-show="isLogin">
+				<button type="submit" class="btn btn-white btn-outline btn-sm btn-rounded" ng-click="logOut()">log out <span>{{currentuser}}</span></button>		
+			</div>
+			<div ng-hide="isLogin">
+			  <button type="button" class="btn btn-white btn-outline btn-sm btn-rounded" ui-sref="login">log in</button>		
+			</div>
+
+		</form>
+		
+       
+      </div>
+
+      <ul class="nav nav-sidebar">        
+		<li ng-class="{active: $state.includes('overview')}"><a ui-sref="overview">Overview <span class="sr-only">(current)</span></a></li>
+        <li ng-class="{active: $state.includes('reports')}"><a ui-sref="reports">Reports</a></li>
+        <li ng-class="{active: $state.includes('reports2')}"><a ui-sref="reports2">Reports2</a></li>
+		<li ng-class="{active: $state.includes('admin')}"><a ui-sref="admin">Admin</a></li>
+      </ul>
+
+    </div>
+    <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main" ui-view>
+    </div>
+  </div>
+</div>
+</div>

@@ -1,0 +1,11 @@
+<div>
+	<a ui-sref="users" class="pull-right btn btn-primary btn-outline btn-rounded">User List</a>
+	<h2>Admin</h2>
+	<div class="jumbotron" ui-view>
+		<div class="container">
+			<h1>Welcome to admin control panel!</h1>
+			
+			<div data-ng-include="'/views/admin/userlist.html'"></div>
+		</div>		
+	</div>
+</div>
