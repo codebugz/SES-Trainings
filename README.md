@@ -25,5 +25,5 @@ Go to the client folder and run the application: /session2/client/ node server.j
 Go to the api folder and run the application: /session2/server/api/ node dashboard.js
 
 
-You can now open your browser: http://localhost:5000
+You can now open your browser: http://localhost:5000/index.html
 
